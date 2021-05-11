@@ -1,0 +1,4 @@
+export default {
+    ADD_CART: 'ADD_CART',
+    DELETE_FROMCART: 'DELETE_FROMCART'
+}
