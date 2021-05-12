@@ -6,8 +6,11 @@ const {ADD_CART, DELETE_FROMCART} = types
 
 const cartReducer = (state=[], action) => {
 
-switch (action) {
+switch (action.type) {
     case ADD_CART:
+
+
+    console.log(action.payload)
         
         return [...state, action.payload]
 

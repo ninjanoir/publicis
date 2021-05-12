@@ -1,14 +1,19 @@
 import types from './actionTypes'
 
+import {Props} from '../../ui/Card'
 
 
 
-export const addToCart = product => {
+
+export const addToCart = (product: Props) => {
 	const { ADD_CART } = types
+
+
+	console.log('form add to cart action',product)
 
 	return {
 		type: ADD_CART,
-		payload: product,
+		payload: product ,
 	}
 }
 
