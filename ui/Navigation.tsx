@@ -9,18 +9,17 @@ const Navigation = () => {
 
 	const toggle = () => {
 		setOpen(!open)
-
-		console.log(open)
 	}
 
 	useEffect(() => {
 		const cart = document.querySelector('#chariot')
 
 		if (open) {
-			console.log(cart.classList)
-
 			cart.classList.value =
-				'p-5 absolute z-50 top-15 right-0 transform -translate-x-80 translate-y-12 md:transle-x-60 xs:translate-x-40'
+				'p-5 absolute z-50 w-64 top-12 right-0 mr-40 '
+		}else{
+			cart.classList.value =
+				'p-5 absolute z-50 w-64 top-12 right-0 -mr-60 '
 		}
 
 		return () => {}
@@ -69,7 +68,7 @@ const Navigation = () => {
 						</div>
 
 						<div
-							className='flex flex-row-reverse ml-2 w-full cursor-pointer'
+							className='flex flex-row-reverse ml-2 w-11/12 cursor-pointer'
 							onClick={toggle}>
 							<div slot='icon' className='relative'>
 								<div className='absolute text-xs rounded-full -mt-1 -mr-2 px-1 font-bold top-0 right-0 bg-red-700 text-white'>

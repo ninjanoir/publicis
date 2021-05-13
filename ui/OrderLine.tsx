@@ -2,7 +2,22 @@
 import {Props} from '../ui/Card'
 
 
+import {useDispatch} from 'react-redux'
+
+import {deleteToCart} from '../store/action/index'
+
+
 const OrderLine = (product: Props) => {
+
+const dispatch = useDispatch()
+
+    const handleDelete = (isbn) => {
+
+        return dispatch(deleteToCart(isbn))
+        
+    }
+
+
 	return (
 		<div className='p-2 w-64 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100'>
 			<div className='p-2 w-12'>
@@ -12,7 +27,7 @@ const OrderLine = (product: Props) => {
 				<div className='font-bold'>{product.title}</div>
 			</div>
 			<div className='flex flex-col w-18 font-medium items-end'>
-				<div className='w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700'>
+				<div className='w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700' onClick={() => handleDelete(product.isbn)}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='100%'

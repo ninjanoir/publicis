@@ -4,7 +4,6 @@ import {Props} from '../../ui/Card'
 
 
 
-
 export const addToCart = (product: Props) => {
 	const { ADD_CART } = types
 
@@ -18,11 +17,28 @@ export const addToCart = (product: Props) => {
 }
 
 
-export const deleteToCart = index => {
+export const deleteToCart = (isbn: string) => {
 	const { DELETE_FROMCART } = types
+
+
+
 
 	return {
 		type: DELETE_FROMCART,
-		payload: index,
+		payload: isbn,
+	}
+}
+
+
+
+export const setPromo = (promo: {type: string; price: number}) => {
+
+
+	const {SET_PROMO} = types
+
+
+	return {
+		type:SET_PROMO,
+		payload: promo,
 	}
 }
